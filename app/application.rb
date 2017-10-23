@@ -20,10 +20,7 @@ class Application
       end
     elsif req.path.match(/add/)
       new_item = req.params["item"]
-
       @@items.include?(new_item) ? @@cart << new_item : resp.write "Item not found"
-      
-      resp.write "#{new_item}"
     else
       resp.write "Path Not Found"
     end
